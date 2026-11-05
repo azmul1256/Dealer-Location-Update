@@ -231,7 +231,7 @@ async function lookupDealer() {
   const id = idEl.value.trim();
   nameEl.value = "";
   if (!id) { setIdStatus(""); return; }
-  if (ENDPOINT.startsWith("https://script.google.com/macros/s/AKfycbwddMW0qsx43oZrWKTo_up6sUaR6vAMb49QPc20B1zwigFFILiET0NIrFfkUpxQNCEo-w/exec")) { setIdStatus("ফর্মটি এখনো সংযুক্ত নয়: ENDPOINT সেট করুন।", "err"); return; }
+  if (ENDPOINT.startsWith("PASTE_")) { setIdStatus("ফর্মটি এখনো সংযুক্ত নয়: ENDPOINT সেট করুন।", "err"); return; }
   const seq = ++lookupSeq;
   setIdStatus("ডিলার আইডি খোঁজা হচ্ছে…");
   try {
@@ -267,7 +267,7 @@ form.addEventListener("submit", async e => {
     idEl.focus(); return;
   }
   if (!latEl.value || !lngEl.value) { showModal(); return; }
-  if (ENDPOINT.startsWith("https://script.google.com/macros/s/AKfycbwddMW0qsx43oZrWKTo_up6sUaR6vAMb49QPc20B1zwigFFILiET0NIrFfkUpxQNCEo-w/exec")) {
+  if (ENDPOINT.startsWith("PASTE_")) {
     msg.className = "msg err"; msg.textContent = "ফর্মটি এখনো সংযুক্ত নয়: পেজের সোর্সে ENDPOINT URL সেট করুন."; return;
   }
 
